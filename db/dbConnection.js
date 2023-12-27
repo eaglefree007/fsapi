@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 // Connect to MongoDB
-const dbConnect = () =>
+const dbConnect = (url) =>
 {
-  mongoose.connect(process.env.MONGO_URL)
+  mongoose.connect(url)
   mongoose.connection.on('error', error => console.log(`not connected. Reason : ${error}`))
   mongoose.connection.on('open', async () => console.log('Connected to MongoDB'))
 }

@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken');
 const { dbConnect, dbDisconnect } = require('./db/dbConnection');
 const UserRouter = require('./routes/UserRouter');
 const HomeRouter = require('./routes/HomeRouter');
-dbConnect()
+dbConnect(process.env.MONGO_URL)
 
 const app = express();
 
