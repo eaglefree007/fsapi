@@ -8,7 +8,7 @@ module.exports = {
     try
     {
       let userData = await UserModel.find({ "$or": [{ name: name }, { ig_username: username }] });
-      if(userData)
+      if(!userData)
       {
         // console.log("already exist !!!")
         res.send({ message: "😊 User already Exists 😊" })
